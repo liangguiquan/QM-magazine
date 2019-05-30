@@ -1,0 +1,33 @@
+<!-- pages/mark/mark.wxml -->
+<!-- <text>pages/mark/mark.wxml</text> -->
+
+<view class="container">
+    <view class="user-container">
+        <view class="user-info">
+            <view class="user-name">{{userInfo.nickName}}</view>
+            <view class="user-avatar">
+                <image wx:if="{{authorized}}" src="{{userInfo.avatarUrl}}" />
+
+                <!-- 获取授权 -->
+                <!-- <button wx:if="{{!authorized}}" class="get-user-info" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">
+                    <image src="/images/mark/login.png" />
+                </button> -->
+                <d-imgBtn open-type="getUserInfo" bind:getuserinfo="onGetUserInfo">
+                    <image src="/images/mark/login.png"  slot="img" />
+                </d-imgBtn>
+            </view>
+
+            <!-- <open-data type="userNickName" class="user-name" />
+            <open-data type="userAvatarUrl" class="user-avatar" /> -->
+        </view>
+
+        <view class="share">
+            <d-imgBtn open-type="share">
+                <image src="/images/mark/relay.png" slot="img" />
+            </d-imgBtn>
+        </view>
+        
+    </view>
+
+    <d-articleList article-list="{{likeList}}" />
+</view>

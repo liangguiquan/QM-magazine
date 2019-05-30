@@ -1,0 +1,28 @@
+<!-- components/video/cmp.wxml -->
+<!-- <text>components/video/cmp.wxml</text> -->
+
+<!-- 视频组件 -->
+<view class="container">
+    <view>
+        <!-- 原生组件例如video，绑定事件只能使用bind，不能使用catch，也不能有冒号，bindtap -->
+        <!-- bindended 播放结束事件 -->
+        <video id="{{videoId}}" class="video" hidden="{{showPoster}}" src="{{src}}" bindended="onVideoEnd" />
+
+        <view  hidden="{{!showPoster}}" class="poster-container">
+            <image class="poster" src="{{poster}}" />
+            <view class="controler" catch:tap="onPlay">
+                <image class="play-btn" src="./image/play.png" />
+                <text class="duration">{{duration}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="main-title">
+        <text>{{mainTitle}}</text>
+    </view>
+
+    <view catch:tap="onMaskTap" class="mask" hidden="{{showPoster}}"></view>
+</view>
+
+<!-- http://hiphotos.baidu.com/feed/pic/item/d50735fae6cd7b89e58f53aa022442a7d9330e33.jpg -->
+<!-- http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400 -->

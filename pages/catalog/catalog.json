@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "d-subscribe": "/components/subscribe/cmp"
+  }
+}

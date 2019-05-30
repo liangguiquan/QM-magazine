@@ -1,0 +1,32 @@
+<!-- index.wxml -->
+<!-- <d-bigImg img-src='{{src}}' main-title="{{title}}" />
+<d-pureText main-title='上课的时候千万不能睡觉' sub-head='上课的时候千万不能睡觉'/>
+<d-imgText main-title='上课的时候千万不能睡觉' sub-head='上课的时候千万不能睡觉' img-src='http://pic2.58cdn.com.cn/zhuanzh/n_v268b308001d8843eda3e37b6587e92447.jpg?w=750&h=0'/>
+<d-nineImg main-title='上课的时候千万不能睡觉'/>
+<d-video src='http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
+poster='http://hiphotos.baidu.com/feed/pic/item/d50735fae6cd7b89e58f53aa022442a7d9330e33.jpg' 
+duration='41' 
+main-title='上课的时候千万不能睡觉'
+video-id='video201801'/>
+<d-tag tag='心理' tagId="3"/>
+<d-more tag='心理'/>
+<d-like like='true' /> -->
+<!-- <d-article wx:for="{{articleList}}" wx:key="artId" article-detail='{{item}}'/> -->
+
+<d-nav class="nav" catch:nav="onNav" />
+<!-- catch:nav  自定义事件 -->
+
+<d-recommend recommend='{{recommend}}' magazineId='{{magazineId}}' class="recommend" />
+
+
+
+<d-tagList mark-list='{{markList}}'>
+    <d-add slot="before" class='add' wx:if="{{magazineId === 0}}"/>
+    <view slot="after" class="to-catalog" catch:tap="onCatalog" wx:if="{{magazineId === 0}}">•••</view>
+</d-tagList>
+
+<d-articleList article-list='{{articleList}}' more='{{getMore}}' magazineId='{{magazineId}}' />
+
+<view class="loading-container"  wx:if="{{loading}}">
+    <d-loading class="loading"/>
+</view>

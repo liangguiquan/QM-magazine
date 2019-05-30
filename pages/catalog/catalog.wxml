@@ -1,0 +1,24 @@
+<!--pages/catalog/catalog.wxml-->
+<!-- <text>pages/catalog/catalog.wxml</text> -->
+
+
+<view class="container">
+    <view ></view>
+    <view ></view>
+
+
+
+
+    <view >
+        <view class="tag-list-container" wx:for="{{tagInfoList}}" wx:for-item="tagListItem" wx:key="title">
+        <view >{{tagListItem.title}} ></view>
+            <view class="tag" wx:for="{{tagListItem.tagList}}" wx:key="tagId">
+            <text class="tag-text"> # {{item.tag}}</text>
+            <d-subscribe tag="{{item.tag}}" tag-id="{{item.tagId}}}"/>
+            </view>
+        </view>
+    
+    </view>
+
+
+</view>

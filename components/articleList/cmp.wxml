@@ -1,0 +1,12 @@
+<!--components/articleList/cmp.wxml-->
+<!-- <text>components/articleList/cmp.wxml</text> -->
+
+<view class="container">
+    
+
+    <d-article class="article" wx:for="{{articleList}}" wx:key="artId" article-detail='{{item}}'/>
+    <!-- 自定义组件hidden跟原来的hidden不一样,会被认为是一个属性 -->
+    <d-loading hidden='{{!loading}}' class="loading" />
+    <text wx:if="{{noMoreData}}" class="no-more">没有更多数据了</text>
+</view>
+

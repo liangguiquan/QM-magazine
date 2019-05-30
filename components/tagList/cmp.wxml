@@ -1,0 +1,10 @@
+<!--components/tagList/cmp.wxml-->
+<!-- <text>components/tagList/cmp.wxml</text> -->
+
+<view class="container">
+    
+    <!-- 预留位置 -->
+    <slot name="before"></slot>
+    <d-tag class="tag" wx:for="{{markList}}" wx:key="{{type}}" tag='{{item.type}}' tagId='{{item.typeId}}'/>
+    <slot name="after"></slot>
+</view>
